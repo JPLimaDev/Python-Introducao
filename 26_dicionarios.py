@@ -12,7 +12,11 @@
 #dicionario.copy() - Retorna uma copia rasa do dicionario
 #dicionario.update(outro_dicionario) - Atualiza o dicionario com os pares chave-valor de outro_dicionario
 
-x = {'nome': 'joao', 'idade':25, 'cidade':'sao paulo'}
-print(x['nome'])
-print(x['idade'])
-print(x['cidade'])
+pessoa = {
+    'nome': 'Joao',
+    'idade': 25,
+    'altura': 1.75}  
+
+print(pessoa.values())  # Retorna todos os valores do dicionario
+print(pessoa.keys())    # Retorna todas as chaves do dicionario
+print(pessoa.items())   # Retorna todos os itens (pares chave-valor) do dicionario
