@@ -4,7 +4,7 @@
 '''
 #Criar uma função
 def minha_funcao():
-    print("Olá, mundo!")
+    print("Olá, mundo!")'
 
 #Chamar a função
 minha_funcao()
@@ -21,10 +21,22 @@ resultado = soma(3, 5)
 print(resultado)
 '''
 
-def soma_numeros(n1):
-    
-    print(n1)
+#Função que contem 2 parâmetros e retorna a soma deles
+#args - Argumentos variáveis (números indefinidos de parâmetros)
+#kwargs - Argumentos nomeados variáveis (números indefinidos de parâmetros nomeados)
+'''def soma_numeros(**kwargs):
+    x = kwargs.get('teste4')
+    if x:
+        print('Foi passado o teste4')
+    else:
+        print('Não foi passado o teste4')
+    print(x)
 
-soma_numeros(10)
-soma_numeros(15)
-soma_numeros(20)
+soma_numeros(teste1 = 10 , teste2 = 20, teste3 = 30 )'''
+
+def soma_valores(n1 , n2):
+    soma = n1 + n2
+    return soma
+
+y = soma_valores(1, 2)
+print(y)

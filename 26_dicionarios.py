@@ -6,7 +6,7 @@
 #dicionario.keys() - Retorna uma lista de todas as chaves no dicionario
 #dicionario.values() - Retorna uma lista de todos os valores no dicionario
 #dicionario.items() - Retorna uma lista de tuplas contendo pares chave-valor
-#dicionario.get(chave, valor_padrao) - Retorna o valor associado a
+#dicionario.get(chave, valor_padrao) - Retorna o valor associado a 
 #chave ou valor_padrao se a chave nao existir
 #dicionario.clear() - Remove todos os itens do dicionario
 #dicionario.copy() - Retorna uma copia rasa do dicionario
