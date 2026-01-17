@@ -13,4 +13,4 @@ class Pessoas:
     def logar_sistema(self):
         print(f'{self.retorna_nome()} está logando no sistema')
 
-print(Pessoas.possui_olho) 
+print(Pessoas.possui_boca) 
