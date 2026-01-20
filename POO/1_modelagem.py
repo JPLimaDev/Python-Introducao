@@ -13,4 +13,22 @@ class Pessoas:
     def logar_sistema(self):
         print(f'{self.retorna_nome()} está logando no sistema')
 
-print(Pessoas.possui_boca) 
+    @classmethod #Methodo de classe
+    def andar(cls):
+        cls.pernas = 2
+        return None
+    
+    @staticmethod
+    def e_adulto(idade):
+        if idade >= 18:
+            return True
+        return False
+
+
+# print(Pessoas.possui_boca) 
+
+# p1 = Pessoas('João', 25)
+
+# p1.andar()
+
+print(Pessoas.e_adulto(21))
