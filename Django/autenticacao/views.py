@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from .models import Pessoa, Cargos
+from django.shortcuts import get_list_or_404
 
 def cadastro(request):
     if request.method == "GET":
@@ -24,8 +25,11 @@ def listar(request):
     pessoas = Pessoa.objects.all()
     return render(request, 'listar/listar.html', {'pessoas':pessoas})
 
-    
 
+def listar_unico(request , id):
+    pessoa = get_list_or_404(Pessoa, id = id)
+ 
+    return render(request, 'listar/listar.html', {'pessoas':pessoa})
 
 
 
