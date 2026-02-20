@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %} Cadastro {% endblock%}
+
+{% block 'conteudo' %} 
+
+<div class="container">
+    {% if status == '0' %}
+    <div class="alert alert-success" role="alert">
+      Usuario Cadastrado com Sucesso  
+    </div>
+    {% endif %}
+    {% if status == '1' %}
+    <div class="alert alert-danger" role="alert">
+      Nome e email não podem estar vazios 
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+
+        <div class="col-md">
+            <h1>Cadastre-se</h1>
+            <hr>
+            <form action="{% url 'valida_cadastro'%}" method="POST">
+                <label>Nome:</label> {% csrf_token %}
+                <input class="form-control" type="text" placeholder="Nome" name="nome">
+                <br>
+                <label>Email:</label>
+                <input class="form-control" type="text" placeholder="Email" name="email">
+                <br>
+                <label>Senha:</label>
+                <input class="form-control" type="password" placeholder="Senha" name="senha">
+                <br>
+                <input class="btn btn-success btn-lg" type="submit" value="Enviar">
+
+            </form>
+        </div>
+
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
