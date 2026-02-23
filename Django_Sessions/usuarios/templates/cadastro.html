@@ -9,10 +9,25 @@
     <div class="alert alert-success" role="alert">
       Usuario Cadastrado com Sucesso  
     </div>
-    {% endif %}
-    {% if status == '1' %}
+
+    {% elif status == '1' %}
     <div class="alert alert-danger" role="alert">
       Nome e email não podem estar vazios 
+    </div>
+
+    {% elif status == '2' %}
+    <div class="alert alert-danger" role="alert">
+      Sua senha deve ter no mínimo 8 caracters
+    </div>
+
+    {% elif status == '3' %}
+    <div class="alert alert-danger" role="alert">
+      Email já cadastrado
+    </div>
+
+    {% elif status == '4' %}
+    <div class="alert alert-danger" role="alert">
+      Erro interno do sistema
     </div>
     {% endif %}
     <div class="row">
@@ -34,6 +49,7 @@
                 <input class="form-control" type="password" placeholder="Senha" name="senha">
                 <br>
                 <input class="btn btn-success btn-lg" type="submit" value="Enviar">
+                <a href="{% url 'login' %}" class="btn btn-info btn-lg">Login</a>
 
             </form>
         </div>

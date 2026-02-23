@@ -23,7 +23,7 @@ def valida_cadastro(request):
     if len(nome.strip()) == 0 or len(email.strip()) == 0:
         return redirect('/auth/cadastro?status=1') #Status passando que estão vazios campos email e nome
     if len(senha) < 8:
-        return redirect('/auth/cadastro/status=2')#Status passando que o campo senha tem menos que 8 carct
+        return redirect('/auth/cadastro?status=2')#Status passando que o campo senha tem menos que 8 carct
         
     usuario = Usuarios.objects.filter(email = email)
 
@@ -42,3 +42,15 @@ def valida_cadastro(request):
         return redirect('/auth/login?status=0')#Cadastro concluido retorna para login
     except:
         return redirect('/auth/cadastro?status=4')#Deu erro no cadastro retorna status 4
+    
+def valida_login(request):
+    email = request.POST.get('email')
+    senha = request.POST.get('senha')
+    
+    senha = sha256(senha.encode()).hexdigest()
+    usuario = Usuarios.objects.filter(email = email).filter(senha = senha)
+
+    if len(usuario) == 0:
+        return redirect('/auth/login?status=1') #Nao encontrado usuario com esse email e senha
+    elif len(usuario) > 0:
+        pass
