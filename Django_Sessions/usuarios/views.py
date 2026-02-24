@@ -53,4 +53,10 @@ def valida_login(request):
     if len(usuario) == 0:
         return redirect('/auth/login?status=1') #Nao encontrado usuario com esse email e senha
     elif len(usuario) > 0:
-        pass
+        request.session['logado'] = True 
+        request.session['usuario_id'] = usuario[0].id
+        return redirect('/plataforma/home')
+    
+def sair(request):
+    request.session.flush()
+    return redirect('/auth/login')
