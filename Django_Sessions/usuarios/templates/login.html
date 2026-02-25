@@ -5,15 +5,14 @@
 {% block 'conteudo' %} 
 
 <div class="container">
-{% if status == '1' %}
-    <div class="alert alert-warning" role="alert">
-    Nome e email inválido
-    </div>
-    {% endif %}
-{% if status == '2' %}
-    <div class="alert alert-warning" role="alert">
-    Faça login antes de acessar o sistema
-    </div>
+    <br>
+    {% if messages %}
+        {% for i in messages %}
+            
+            <div class="alert alert-{{i.tags}}" role="alert">
+                {{i}} 
+            </div>
+        {% endfor %}
     {% endif %}
 
 

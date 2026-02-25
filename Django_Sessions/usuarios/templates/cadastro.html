@@ -5,30 +5,13 @@
 {% block 'conteudo' %} 
 
 <div class="container">
-    {% if status == '0' %}
-    <div class="alert alert-success" role="alert">
-      Usuario Cadastrado com Sucesso  
-    </div>
-
-    {% elif status == '1' %}
-    <div class="alert alert-danger" role="alert">
-      Nome e email não podem estar vazios 
-    </div>
-
-    {% elif status == '2' %}
-    <div class="alert alert-danger" role="alert">
-      Sua senha deve ter no mínimo 8 caracters
-    </div>
-
-    {% elif status == '3' %}
-    <div class="alert alert-danger" role="alert">
-      Email já cadastrado
-    </div>
-
-    {% elif status == '4' %}
-    <div class="alert alert-danger" role="alert">
-      Erro interno do sistema
-    </div>
+    {% if messages %}
+        {% for i in messages %}
+            
+            <div class="alert alert-{{i.tags}}" role="alert">
+                {{i}} 
+            </div>
+        {% endfor %}
     {% endif %}
     <div class="row">
         <div class="col-md-3">
