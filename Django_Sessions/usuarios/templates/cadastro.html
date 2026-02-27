@@ -7,7 +7,6 @@
 <div class="container">
     {% if messages %}
         {% for i in messages %}
-            
             <div class="alert alert-{{i.tags}}" role="alert">
                 {{i}} 
             </div>
@@ -30,6 +29,15 @@
                 <br>
                 <label>Senha:</label>
                 <input class="form-control" type="password" placeholder="Senha" name="senha">
+                <br>
+                <label>Cep:</label>
+                <input class="form-control" type="text" placeholder="Cep" name="cep">
+                <br>
+                <label>Rua:</label>
+                <input class="form-control" type="text" placeholder="Rua" name="rua">
+                <br>
+                <label>Numero:</label>
+                <input class="form-control" type="text" placeholder="Numero" name="numero">
                 <br>
                 <input class="btn btn-success btn-lg" type="submit" value="Enviar">
                 <a href="{% url 'login' %}" class="btn btn-info btn-lg">Login</a>
