@@ -119,3 +119,7 @@ MESSAGE_TAGS = {
     constants.INFO: 'info',
     constants.WARNING: 'warning',
 }
+
+#Auth django
+
+AUTH_USER_MODEL = "usuarios.Users"

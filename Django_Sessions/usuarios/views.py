@@ -6,6 +6,7 @@ from django.contrib import messages, auth
 from django.contrib.messages import constants
 from django.contrib.auth.models import User
 
+
 def login(request):
     if request.user.is_authenticated:
         return redirect('/plataforma/home')
@@ -22,6 +23,9 @@ def valida_cadastro(request):
     nome = request.POST.get('nome')
     email = request.POST.get('email')
     senha = request.POST.get('senha')
+    cep = request.POST.get('cep')
+    rua = request.POST.get('rua')
+    numero = request.POST.get('numero')
 
     if len(nome.strip()) == 0 or len(email.strip()) == 0:
         messages.add_message(request, constants.ERROR, 'Campos email ou senha vazios')
@@ -41,8 +45,9 @@ def valida_cadastro(request):
     try:
         
         usuario = User.objects.create_user(username = nome, email = email, password=senha)
-        
         usuario.save()
+
+        
         messages.add_message(request, constants.SUCCESS, 'Cadastrado com sucesso')
         return redirect('/auth/login')#Cadastro concluido retorna para login
     except:

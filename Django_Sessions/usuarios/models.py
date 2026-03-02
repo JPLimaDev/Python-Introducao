@@ -1,11 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User , AbstractUser
 
-class EnderecoUsuario(models.Model):
-    rua = models.CharField(max_length=100, blank=True, null=True)
-    numero = models.CharField(max_length=100, blank=True, null=True)
-    cep = models.CharField(max_length=8)
-    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+class Users(AbstractUser):
+    cep = models.CharField(max_length=8, blank=True)
+    rua = models.CharField(max_length=100, blank=True)
+    numero = models.IntegerField(blank=True, null=True)
 
-    def __str__(self):
-        return self.usuario
+    
