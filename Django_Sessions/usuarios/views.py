@@ -4,8 +4,8 @@ from django.shortcuts import redirect
 from hashlib import sha256
 from django.contrib import messages, auth
 from django.contrib.messages import constants
-from django.contrib.auth.models import User
-
+# from django.contrib.auth.models import User
+from .models import Users as User
 
 def login(request):
     if request.user.is_authenticated:
@@ -44,7 +44,12 @@ def valida_cadastro(request):
         return redirect('/auth/cadastro')#Ja tem usuario com esse nome
     try:
         
-        usuario = User.objects.create_user(username = nome, email = email, password=senha)
+        usuario = User.objects.create_user(username = nome, 
+                                           email = email, 
+                                           password=senha, 
+                                           rua = rua, 
+                                           numero = numero, 
+                                           cep = cep)
         usuario.save()
 
         
