@@ -1,0 +1,110 @@
+/* Paleta de Cores NutriLab */
+:root {
+    --verde-principal: #2ecc71;
+    --verde-escuro: #27ae60;
+    --branco: #ffffff;
+    --cinza-fundo: #f4f7f6;
+    --texto-escuro: #2c3e50;
+    --borda: #dcdde1;
+}
+
+body {
+    background-color: var(--cinza-fundo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto-escuro);
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--verde-principal);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img_logo_sidebar {
+    width: 80%;
+    max-width: 200px;
+    filter: brightness(0) invert(1); /* Deixa a logo branca se for escura */
+}
+
+/* Área de Cadastro */
+.area_cadastrar {
+    background-color: var(--branco);
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+.titulo {
+    color: var(--verde-escuro);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.sub-titulo {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+hr {
+    border-top: 1px solid var(--borda);
+    margin-bottom: 30px;
+}
+
+/* Formulário e Inputs */
+.bold {
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.input-form {
+    border: 1.5px solid var(--borda);
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.input-form:focus {
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.2);
+    outline: none;
+}
+
+/* Botão */
+.btn-success {
+    background-color: var(--verde-principal);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: var(--verde-escuro);
+}
+
+/* Links */
+a {
+    color: var(--verde-escuro);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% load static %}
+
+{% block 'head'%} <link rel="stylesheet" href="{% static 'autenticacao/css/styles.css'%}"> {% endblock %}
+
+{% block 'titulo' %} Cadastro {% endblock %}
+
+{% block 'body' %} 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="logo_sidebar">
+                    <h2 class="logo">
+                        {# Adicione o caminho da sua logo aqui #}
+                        <img class="img_logo_sidebar" src="{% static 'autenticacao/img/nutri_lab_logo.webp' %}">
+                    </h2>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="area_cadastrar">
+                    <h2 class="titulo">Seja Bem vindo</h2>
+                    <p class="sub-titulo">Crie sua conta</p>
+                    <hr>
+
+                    {# Ajuste os atributos action e method conforme sua rota Django #}
+                    <form action="{% url 'cadastro' %}" method="POST">
+                        {% csrf_token %} <span class="bold">Nome do Usuário</span>
+                        <input type="text" name="usuario" placeholder="Digite seu nome..." class="form-control input-form" required>
+                        <br>
+
+                        <span class="bold">E-mail</span>
+                        <input type="email" name="email" placeholder="exemplo@email.com" class="form-control input-form" required>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="bold">Senha</span>
+                                <input type="password" name="senha" placeholder="Sua senha" class="form-control input-form" required>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="bold">Confirmar Senha</span>
+                                <input type="password" name="confirmar_senha" placeholder="Confirme a senha" class="form-control input-form" required>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <input type="submit" value="CADASTRAR" class="btn btn-success btn-lg btn-block">
+                    </form>
+
+                    <hr>
+                    <p>Já possui uma conta? <a href="{% url 'logar' %}">Faça login aqui.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
